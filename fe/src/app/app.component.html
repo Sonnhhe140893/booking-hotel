@@ -1,0 +1,76 @@
+
+<div class="all-content">
+  <!-- navbar -->
+<nav class="navbar navbar-expand-md " id="navbar">
+  <div class="container-fluid">
+    <a class="navbar-brand"  id="logo" ><img  src="assets/image/logo.jpg" alt="logo" href="#" ></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon "><i class="fa-solid fa-bars" style="color: white; font-size: 23px;"></i></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 align-items-center text-nowrap">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page"  aria-current="page" routerLink="home">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" routerLink="about">About us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="menu">Menu</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="product">Product</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="gallary">Gallary</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="contact">Contact</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="blogs">Blogs</a>
+        </li>
+      </ul>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit" >Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+
+
+
+
+
+
+
+  <article>
+    <router-outlet></router-outlet>
+  </article>
+
+
+
+  <footer id="footer">
+    <div class="footer-logo text-center"><img src="./images/logo.png" alt=""></div>
+    <div class="socail-links text-center">
+      <i class="fa-brands fa-twitter"></i>
+      <i class="fa-brands fa-facebook-f"></i>
+      <i class="fa-brands fa-instagram"></i>
+      <i class="fa-brands fa-youtube"></i>
+      <i class="fa-brands fa-pinterest-p"></i>
+    </div>
+    <div class="credite text-center">
+        Designed By <a href="#"> Hồng Sơn</a>
+    </div>
+    <div class="copyright text-center">
+      &copy;  <strong><span>Booking Technology</span></strong>. All Rights Reserved
+  </div>
+</footer>
+
+
+</div>
+
+
+
+

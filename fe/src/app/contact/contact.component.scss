@@ -1,0 +1,25 @@
+.card .card-body{
+  font-family: 'Roboto', sans-serif;
+  background: #f7f5f2;;
+}
+.card-body h2 span{
+
+  font-weight: bold;
+  color: #b2744c;
+}
+.d-flex button{
+  font-weight: bold;
+  border-radius: 5px ;
+  background: transparent;
+  border: 2px solid #b2744c;
+  transition: 0.5s;
+  cursor: pointer;
+}
+.d-flex button:hover{
+  background-color: #b2744c;
+
+}
+.fw-bold u{
+ color : #b2744c;
+
+}
