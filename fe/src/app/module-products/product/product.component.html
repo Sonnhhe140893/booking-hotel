@@ -1,0 +1,18 @@
+<section class="product container mx-auto w-100 h-100"  id="product">
+  <div class="heading4">Products</div>
+  <div class="row">
+    <div class="col-md-3 mt-5" *ngFor="let item of listRooms">
+      <div class="card" >
+        <img class="w-100" src="{{helperService.buildImage(item.avatar)}}" alt="{{item.image}}" />
+        <div class="card-body">
+          <h3>Name: {{ item.name }}</h3>
+          <p>
+            pice sale: {{ item.price }} (pice: ) <span><i></i></span>
+          </p>
+          <button class="btn btn-primary w-100" routerLink="/product/{{item._id}}">Chi tiết sản phẩm</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>

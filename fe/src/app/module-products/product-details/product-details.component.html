@@ -1,0 +1,45 @@
+<section class="product container mx-auto w-100 fw-bold  " style="height: 950px;padding-top:170px ;" id="product">
+  <div class="heading4 text-md-center   " style="font-size: xx-large; color: #b2744c; ">Products</div>
+
+  <div class="container view-productdetail">
+    <div class="row">
+        <div class="col-md-5">
+           <img style="height: 300px;" src="{{product.avatar}}">
+         </div>
+        <div class="col-md-7">
+          <ul class="list-group lg">
+           <li class="list-group-item">
+              <h1>{{product.name}}</h1>
+           </li>
+           <li class="list-group-item">
+               Giá: {{product.price|number:'1.0-0':'fr' }} VNĐ
+           </li>
+           <li class="list-group-item">
+              Số lần xem: {{product.bed}}
+           </li>
+           <li class="list-group-item">
+               Loại : {{product.category}}
+           </li>
+           <li class="list-group-item">
+              Ngày: {{product.created_at|date:"dd/MM/Y"}}
+           </li>
+           <li class="list-group-item" >
+              <button class="btn btn-warning" >Thêm vào giỏ</button> |
+
+           </li>
+          </ul>
+        </div>
+    </div>
+    <div class="row">
+        <h3>Mô tả sản phẩm</h3>
+        <div class="text-justify">{{product.description}}</div> <hr>
+    </div>
+    <div class="row">
+        <app-similar-product [category_id]="category_id" [page_size]="3" ></app-similar-product>
+    </div>
+
+    <div class="row"> <!-- list bình luận --> </div>
+    <div class="row"> <!-- form thêm bình luận --> </div>
+    </div>
+
+</section>

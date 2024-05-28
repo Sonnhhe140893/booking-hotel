@@ -1,0 +1,17 @@
+<section class="categories container mx-auto w-100 "  id="categories">
+  <div class="heading4">Loại phòng</div>
+  <div class="row">
+    <div class="col-md-4 mt-5" *ngFor="let item of categories">
+      <div class="card" >
+        <img class="w-100" src="" alt="" />
+        <div class="card-body">
+          <h3>Name: {{ item.name }}</h3>
+          <p>
+           <span><i></i></span>
+          </p>
+          <button class="btn btn-primary w-100" routerLink="/categories/{{item._id}}">Click now</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
