@@ -26,6 +26,7 @@ import { CartComponent } from './module-order/cart/cart.component';
 import { UsersComponent } from './users-manager/users/users.component';
 import { UpdateUserComponent } from './users-manager/update-user/update-user.component';
 import { SearchComponent } from './search/search.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -56,6 +57,8 @@ import { SearchComponent } from './search/search.component';
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
 
   ],
   providers: [

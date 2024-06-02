@@ -1,1 +1,99 @@
-<p>payment-products works!</p>
+<div class="container mx-auto w-100 h-100 body-content">
+    <h2 class="text-center my-3">Booking</h2>
+    <form [formGroup]="dataBooking">
+        <div class="row">
+            <div class="col-md-6 col-12 mb-3 form-group">
+                <label class="form-label">Check In</label>
+                <input
+                (change)="onDateChange($event)"
+                    type="date"
+                    formControlName="check_in"
+                    class="form-control"
+
+                />
+            </div>
+            <div class="col-md-6 col-12 mb-3 form-group">
+                <label class="form-label">Check Out</label>
+                <input
+                (change)="onDateChange($event)"
+                    type="date"
+                    formControlName="check_out"
+                    class="form-control"
+
+                />
+            </div>
+            <div class="col-md-6 col-12 mb-3 form-group invalid">
+                <label class="form-label">Customer Name</label>
+                <input
+                    type="text"
+                    formControlName="customer_name"
+                    class="form-control"
+                />
+            </div>
+            <div class="col-md-6 col-12 mb-3 form-group invalid">
+                <label class="form-label">Customer Email</label>
+                <input
+                    type="email"
+                    formControlName="customer_email"
+                    class="form-control"
+                />
+            </div>
+            <div class="col-md-6 col-12 mb-3 form-group invalid">
+                <label class="form-label">Customer Phone</label>
+                <input
+                    type="text"
+                    formControlName="customer_phone"
+                    class="form-control"
+                />
+            </div>
+            <div class="col-md-6 col-12 mb-3 form-group invalid">
+                <label class="form-label">Amount of people</label>
+                <input
+                    type="text"
+                    formControlName="amount_of_people"
+                    class="form-control"
+                />
+            </div>
+            <div class="col-md-6 col-12 mb-3 form-group ">
+                <label class="form-label">Payment type</label>
+                <select formControlName="payment_type" class="form-select">
+                    <option value="1">Online</option>
+                    <option value="2">Money</option>
+                </select>
+            </div>
+
+            <div class="col-md-6 col-12 mb-3 form-group invalid">
+                <label class="form-label">Rooms</label>
+                <select class="form-select" (change)="onRoomChange($event)">
+                    <option *ngFor="let item of rooms" value="{{ item._id }}">
+                        {{ item.name }}
+                    </option>
+                </select>
+            </div>
+            <div class="col-12 mb-3 form-group">
+                <label class="form-label">Note</label>
+                <textarea
+                    rows="5"
+                    formControlName="note"
+                    class="form-control"
+                ></textarea>
+            </div>
+
+            <div class="col-md-4 col-12 mb-3">
+                <p class="text-center">
+                    Price :
+                    {{
+                        dataBooking.get("total_money")?.value | currency : "VND"
+                    }}
+                </p>
+            </div>
+            <div class="col-md-4 col-12 mb-3">
+                <p class="text-center">Discount</p>
+            </div>
+            <div class="col-md-4 col-12 mb-3">
+                <p class="text-center">Quantity: </p>
+            </div>
+        </div>
+        <button (click)="handleSubmit()" class="btn btn-success">Submit</button>
+    </form>
+</div>

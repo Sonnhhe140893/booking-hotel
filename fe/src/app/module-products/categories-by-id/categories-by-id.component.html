@@ -1,9 +1,9 @@
-<section class="product container mx-auto w-100 h-100"  id="product">
+<section class="categories container mx-auto w-100 h-auto-m "  id="categories">
   <div class="heading4"  >Products</div>
   <div class="row">
     <div class="col-md-3 mt-5" *ngFor="let item of listProduct">
       <div class="card" >
-        <img class="w-100" src="" alt="" />
+        <img class="w-100" src="{{item.avatar}}" alt="" />
         <div class="card-body">
           <h3>Name: {{item.name}} </h3>
           <p>
@@ -11,9 +11,7 @@
           </p>
           <button class="btn btn-primary w-100" routerLink="/product/{{item._id}}">Chi tiết sản phẩm</button>
         </div>
-
       </div>
     </div>
   </div>
 </section>
-

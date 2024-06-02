@@ -17,7 +17,6 @@ export class ProductRoomService {
     if(filters?.page_size) params = params.append('page_size', filters.page_size);
     if(filters?.name) params = params.append('name', filters.name);
 
-
     return this.http.get(this.apiRoom , {params: params} );
   }
 

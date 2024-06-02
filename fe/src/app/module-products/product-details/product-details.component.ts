@@ -14,6 +14,7 @@ export class ProductDetailsComponent {
     _id: '',
     name: '',
     avatar: '',
+    room_code: '',
     status:false,
     price: 0,
     size: 0,

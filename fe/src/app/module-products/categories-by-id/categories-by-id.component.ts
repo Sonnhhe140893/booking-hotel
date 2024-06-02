@@ -18,7 +18,7 @@ export class CategoriesByIdComponent {
     paging: any = {
         total: 0,
         page: 1,
-        page_size: 8,
+        page_size: 4,
     };
     constructor(
         public helperService: HelperSeriveService,

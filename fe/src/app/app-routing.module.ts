@@ -12,19 +12,22 @@ import { ProductHotComponent } from './module-products/product-hot/product-hot.c
 import { ProductDetailsComponent } from './module-products/product-details/product-details.component';
 import { CategoriesByIdComponent } from './module-products/categories-by-id/categories-by-id.component';
 
+import { PaymentProductsComponent } from './module-order/payment-products/payment-products.component';
+
 const routes: Routes = [
   { path: '', component: HomepageComponent },
   { path: 'home', component: HomepageComponent },
   { path: 'about', component: AboutComponent },
   { path: 'menu', component: MenuComponent },
   { path: 'product', component: ProductComponent },
-  { path: 'product/:', component: ProductHotComponent },
+  { path: 'hot', component: ProductHotComponent },
   { path: 'product/:id', component: ProductDetailsComponent },
   { path: 'categories', component: CategoriesComponent },
   { path: 'categories/:id', component: CategoriesByIdComponent },
   { path: 'gallary', component: GallaryComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'blogs', component: BlogsComponent },
+  { path: 'booking', component: PaymentProductsComponent  },
 ];
 
 @NgModule({

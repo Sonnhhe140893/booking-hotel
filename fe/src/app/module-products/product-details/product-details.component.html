@@ -1,7 +1,7 @@
-<section class="product container mx-auto w-100 fw-bold  " style="height: 950px;padding-top:170px ;" id="product">
-  <div class="heading4 text-md-center   " style="font-size: xx-large; color: #b2744c; ">Products</div>
+<section class="product body-content container mx-auto w-100  fw-bold  " style="height: 950px;padding-top:170px ;" id="product">
+  <div class="heading4 text-md-center mb-3" style="font-size: xx-large; color: #b2744c; ">Products <span>Detail</span> </div>
 
-  <div class="container view-productdetail">
+  <div class="container view-productdetail ">
     <div class="row">
         <div class="col-md-5">
            <img style="height: 300px;" src="{{product.avatar}}">
@@ -24,9 +24,13 @@
               Ngày: {{product.created_at|date:"dd/MM/Y"}}
            </li>
            <li class="list-group-item" >
-              <button class="btn btn-warning" >Thêm vào giỏ</button> |
+              <button class="btn btn-warning" routerLink="" >Order</button> |
+
+              <button class="btn btn-warning" routerLink="/booking">Order Detail</button>
+
 
            </li>
+
           </ul>
         </div>
     </div>

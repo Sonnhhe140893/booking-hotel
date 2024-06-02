@@ -2,6 +2,7 @@ export interface IRoom {
   _id: string;
   name: string;
   avatar: string;
+  room_code:string;
   status: boolean;
   price: number;
   category_id: string;
