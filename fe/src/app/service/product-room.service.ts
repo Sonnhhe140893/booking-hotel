@@ -1,11 +1,17 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
+import { HelperSeriveService } from './common/helper-serive.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ProductRoomService {
-  constructor(private http: HttpClient) {}
+    // headers: any;
+  constructor(private http: HttpClient, private helperService: HelperSeriveService) {
+    // this.headers = {
+    //     x_authorization: helperService.getItems('accessToken')
+    // }
+  }
 
   apiRoom     = 'http://localhost:3053/api/v1/room';
   apiCategory = 'http://localhost:3053/api/v1/category';
@@ -16,13 +22,14 @@ export class ProductRoomService {
     if(filters?.page) params = params.append('page', filters.page);
     if(filters?.page_size) params = params.append('page_size', filters.page_size);
     if(filters?.name) params = params.append('name', filters.name);
-
-    return this.http.get(this.apiRoom , {params: params} );
+    return this.http.get(this.apiRoom , { params: params} );
+    // return this.http.get(this.apiRoom , {headers: this.headers, params: params} );
   }
 
 
   getProductDetail(id: any) {
     return this.http.get(this.apiRoom + '/' + id);
+    // return this.http.get(this.apiRoom + '/' + id, {headers: this.headers});
   }
 
   getCategories(params: any){

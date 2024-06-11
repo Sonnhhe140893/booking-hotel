@@ -1,0 +1,85 @@
+<section class=" bg-image container mx-auto w-100 h-100 body-content"
+  style="background-image: url('https://mdbcdn.b-cdn.net/img/Photos/new-templates/search-box/img4.webp');">
+  <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+    <div class="container h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+          <div class="card" style="border-radius: 15px;">
+            <div class="card-body p-5">
+              <h2 class="text-uppercase text-center mb-5">Create an account</h2>
+
+              <form [formGroup]="registerForm" (ngSubmit)="proceedRegisteration()">
+
+                <!-- <div class="form-outline mb-4">
+                    <img type="img"  id="form3Example1cg" class="form-control form-control-lg" placeholder="Enter avata " formControlName="avata"/>
+                    <label class="form-label" for="form3Example1cg">Ảnh: </label>
+                  </div> -->
+
+                <div class="form-outline mb-4">
+                  <input type="text"  id="name" class="form-control form-control-lg" placeholder="Enter UserName " formControlName="name"/>
+
+                </div>
+
+                <div class="form-outline mb-4">
+                  <input type="password" id="password" class="form-control form-control-lg"  formControlName="password" placeholder="Enter Password" />
+
+                </div>
+
+                <div class="form-outline mb-4">
+                  <input type="password" id="form3Example4cdg" class="form-control form-control-lg"  placeholder="Enter Repeat your password" formControlName="password" />
+
+                </div>
+                <div class="form-outline mb-4">
+                  <input type="email" id="email" class="form-control form-control-lg" formControlName="email" placeholder="Enter Email" />
+
+                </div>
+                <div class="form-outline mb-4">
+                    <input type="number" id="phone" class="form-control form-control-lg"  placeholder="Enter Phone Number" formControlName="phone" />
+
+                  </div>
+
+                <div class="form-outline mb-4">
+
+                  <select class="select" formControlName="sex" aria-label="Select an option">
+
+                    <option value="2">Male</option>
+                    <option value="3">Female</option>
+                    <option value="4">Other...</option>
+                  </select><p class="fw-bold">Gender</p>
+
+                </div >
+
+                <!-- <div  class="form-outline mb-4">
+                    <input type="text" id="form3Example4cdg" class="form-control form-control-lg" placeholder="Enter birthday"/>
+                  <label class="form-label" for="form3Example4cdg" formControlName="birthday"  >Ngày sinh: </label>
+                </div> -->
+
+                <!-- <div class="form-outline mb-4">
+                  <input type="number" id="form3Example4cdg" class="form-control form-control-lg" placeholder="Enter status"/>
+                  <label class="form-label" for="form3Example4cdg" formControlName="status"  >status: </label>
+                </div> -->
+
+                <div class="form-check d-flex justify-content-center mb-5">
+                  <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3cg" />
+                  <label class="form-check-label" for="form2Example3g">
+                    I agree all statements in <a href="#!" class="text-body"><u>Terms of service</u></a>
+                  </label>
+                </div>
+
+                <div class="d-flex justify-content-center">
+                  <button type="submit"
+                    class="btn btn-success btn-block btn-lg gradient-custom-4 text-body" >Register</button>
+                </div>
+
+                <p class="text-center text-muted mt-5 mb-0">Have already an account? <a href="#!"
+                    class="fw-bold text-body" routerLink="/login"><u>Login here</u></a></p>
+
+              </form>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

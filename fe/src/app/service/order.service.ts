@@ -12,10 +12,17 @@ export class OrderService {
 
    apiCart = "http://localhost:3053/api/v1/booking";
 
+    getAll(filters: any){
+        let params = new HttpParams()
+        if(filters?.user_id) params = params.append('user_id', filters.user_id)
+        return this.http.get(this.apiCart , {params: params})
+    }
 
     bookingsRooms(data:any){
-       return this.http.post(this.apiCart , data)
+       return this.http.post(this.apiCart , data);
     }
+
+
 
 
    }

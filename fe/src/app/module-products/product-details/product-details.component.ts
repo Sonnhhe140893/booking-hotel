@@ -46,11 +46,12 @@ export class ProductDetailsComponent {
     this.activeRoute.params.subscribe((params: any) => {
         if(params?.id) {
             let id = params.id
+            console.log("clg id============", id);
             this.productService.getProductDetail(id).subscribe((res: any) => {
                 console.log('resssssss', res);
 
                 this.product =res?.data;
-                this.category_id = this.product.category_id;
+                this.category_id = this.product.category;
                 console.log("category=========>",this.category_id);
                 console.log("product=>>>>>",this.product);
 

@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule,  } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ToastrModule } from 'ngx-toastr';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -18,7 +19,6 @@ import { CategoriesComponent } from './module-products/categories/categories.com
 import { CategoriesByIdComponent } from './module-products/categories-by-id/categories-by-id.component';
 import { SimilarProductComponent } from './module-products/similar-product/similar-product.component';
 import { LoginComponent } from './module-authencation/login/login.component';
-import { ResigterComponent } from './module-authencation/resigter/resigter.component';
 import { OrderProductsComponent } from './module-order/order-products/order-products.component';
 import { PaymentProductsComponent } from './module-order/payment-products/payment-products.component';
 import { OrderDetailComponent } from './module-order/order-detail/order-detail.component';
@@ -26,7 +26,9 @@ import { CartComponent } from './module-order/cart/cart.component';
 import { UsersComponent } from './users-manager/users/users.component';
 import { UpdateUserComponent } from './users-manager/update-user/update-user.component';
 import { SearchComponent } from './search/search.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RegisterComponent } from './module-authencation/register/register.component';
+import { ForgotPasswordComponent } from './module-authencation/forgot-password/forgot-password.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -44,21 +46,25 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     CategoriesByIdComponent,
     SimilarProductComponent,
     LoginComponent,
-    ResigterComponent,
     OrderProductsComponent,
     PaymentProductsComponent,
     OrderDetailComponent,
     CartComponent,
     UsersComponent,
     UpdateUserComponent,
-    SearchComponent
+    SearchComponent,
+    RegisterComponent,
+    ForgotPasswordComponent
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     HttpClientModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ToastrModule.forRoot(),
+
 
   ],
   providers: [

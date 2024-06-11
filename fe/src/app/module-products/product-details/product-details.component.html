@@ -24,11 +24,7 @@
               Ngày: {{product.created_at|date:"dd/MM/Y"}}
            </li>
            <li class="list-group-item" >
-              <button class="btn btn-warning" routerLink="" >Order</button> |
-
-              <button class="btn btn-warning" routerLink="/booking">Order Detail</button>
-
-
+                         <button class="btn btn-warning" routerLink="/booking">Booking</button>
            </li>
 
           </ul>
@@ -38,6 +34,7 @@
         <h3>Mô tả sản phẩm</h3>
         <div class="text-justify">{{product.description}}</div> <hr>
     </div>
+    <!-- Sản phẩm liên quan -->
     <div class="row">
         <app-similar-product [category_id]="category_id" [page_size]="3" ></app-similar-product>
     </div>

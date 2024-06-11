@@ -4,6 +4,7 @@ import { OrderService } from './../../service/order.service';
 import { Component } from '@angular/core';
 import moment from 'moment';
 import { Router } from '@angular/router';
+import { HelperSeriveService } from '../../service/common/helper-serive.service';
 @Component({
     selector: 'app-payment-products',
     templateUrl: './payment-products.component.html',
@@ -36,8 +37,9 @@ export class PaymentProductsComponent {
         private OrderService: OrderService,
         private ProductRoomService: ProductRoomService,
         private Router : Router,
+        private helperService: HelperSeriveService
     ) {
-        console.log('Cách Lấy giá trị trừ form group---------> ');
+        console.log(' giá trị trừ form group---------> ');
         console.log('Giá trị form group---------> ', this.dataBooking.value);
         console.log('========================================');
 
@@ -63,6 +65,7 @@ export class PaymentProductsComponent {
 
     ngOnInit(): void {
         this.getRooms({});
+        this.getUser();
     }
 
     handleSubmit() {
@@ -112,10 +115,10 @@ export class PaymentProductsComponent {
             let roomId = event.target.value;
             console.log('value event change room ID--------', roomId);
             let room: any = this.rooms.find((room: any) => room._id === roomId);
-            let price = room?.price;
-
-            console.log('priceId=======================', price);
             console.log('roommmmmmm', room);
+            let price = room?.price;
+            console.log('priceId=======================', price);
+
             this.dataBooking.patchValue({
                 room_id: roomId,
                 price: price,
@@ -126,10 +129,24 @@ export class PaymentProductsComponent {
         }
     }
 
+    getUser(){
+       let user =  this.helperService.getItems("user");
+       console.log("userrrrr_id", user);
+       if(user){
+        this.dataBooking.patchValue({
+            customer_name: user.name,
+            customer_email: user.email,
+            customer_phone: user.phone,
+            user_id: user._id,
+        })
+       }
+
+
+    }
     getRooms(filters: any) {
         this.ProductRoomService.getAll(filters).subscribe((res: any) => {
             this.rooms = res?.data?.rooms;
-            console.log('=========ầdadfs======', res);
+
         });
     }
 }

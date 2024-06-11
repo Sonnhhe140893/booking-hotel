@@ -1,1 +1,53 @@
-<p>order-detail works!</p>
+<div class="container mx-auto w-100 h-100 body-content">
+    <h2 class="text-center my-3 fw-bold">History Booking</h2>
+    <div *ngIf="rooms?.length == 0" class="alert alert-warning">
+            Null
+    </div>
+    <div class="row  "  >
+        <h2>ListBookings : </h2><hr>
+        <div *ngFor="let item of rooms" class="col-md-4">
+            <div class="card">
+                <div class="card-header">
+                    <p class="text-xl-start  fw-bold ">
+                         (<i><b>Room : {{item.room.name}}</b></i>)
+                    </p>
+                </div>
+                <div class="card-body">
+                    <div >
+                        <h5 class="card-title"> <strong> </strong> </h5>
+                        <span>(<i> Name : {{item.customer_name}} </i>)</span>
+                        <p class="card-text">
+                            Check_in :  {{item.check_in}}
+                        </p>
+                        <p class="card-text">
+                            Check_out :  {{item.check_out}}
+                        </p>
+                        <p class="card-text">
+                            Email :  {{item.customer_email}}
+                        </p>
+                        <p class="card-text">
+                            Phone :  {{item.customer_phone}}
+                        </p>
+                        <p class="card-text">
+                            Price : {{item.price}}
+                        </p>
+                        <p class="card-text">
+                            Bed :  {{item.room.bed}}
+                         </p>
+                         <p class="card-text">
+                         Node:  {{item.note}}
+                        </p>
+                        <p class="card-text">
+                            <strong> Status_payment: {{item.status_payment}}</strong>
+                        </p>
+                        <p class="card-text">
+                            <strong> Total_money: {{item.total_money}}</strong>
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

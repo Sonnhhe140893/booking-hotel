@@ -1,9 +1,38 @@
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { HelperSeriveService } from './common/helper-serive.service';
 
 @Injectable({
-  providedIn: 'root'
+    providedIn: 'root',
 })
 export class AuthencationService {
+    apiRegister = 'http://localhost:3053/api/v1/auth/register';
+    apiLogin = 'http://localhost:3053/api/v1/auth/login';
+    apiProfile = 'http://localhost:3053/api/v1/profile';
+    constructor(
+        private http: HttpClient,
+        private helperService: HelperSeriveService
+    ) {}
 
-  constructor() { }
+
+    login(filters: any) {
+        return this.http.post(this.apiLogin, filters, {headers: {
+
+        }});
+    }
+
+    RegisterUser(inputdata: any) {
+        return this.http.post(this.apiRegister, inputdata);
+    }
+
+    checkLogin(){
+        return this.helperService.getItems("email","string")!=null;
+    }
+
+    updateProfile(id:any,inputdata:any){
+        return this.http.put(this.apiProfile+ '/' + id, inputdata);
+
+    }
+
+
 }
