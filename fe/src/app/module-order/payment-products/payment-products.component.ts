@@ -77,7 +77,7 @@ export class PaymentProductsComponent {
         this.OrderService.bookingsRooms(this.dataBooking.value).subscribe(
             (res: any) => {
                 this.dataBooking = res;
-                console.log('resssssssssssssssssssssssss= ', res);
+                console.log('resssssssss= ', res);
                 this.Router.navigate(['/product']);
 
             }

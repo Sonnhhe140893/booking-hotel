@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule,  } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
+
 import { AppComponent } from './app.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { AboutComponent } from './about/about.component';
@@ -23,52 +24,54 @@ import { OrderProductsComponent } from './module-order/order-products/order-prod
 import { PaymentProductsComponent } from './module-order/payment-products/payment-products.component';
 import { OrderDetailComponent } from './module-order/order-detail/order-detail.component';
 import { CartComponent } from './module-order/cart/cart.component';
-import { UsersComponent } from './users-manager/users/users.component';
-import { UpdateUserComponent } from './users-manager/update-user/update-user.component';
 import { SearchComponent } from './search/search.component';
 import { RegisterComponent } from './module-authencation/register/register.component';
 import { ForgotPasswordComponent } from './module-authencation/forgot-password/forgot-password.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AuthInterceptor } from './auth.interceptor';
+import { RouterModule } from '@angular/router';
+import { UsersComponent } from './module-authencation/users/users.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HomepageComponent,
-    AboutComponent,
-    MenuComponent,
-    ProductComponent,
-    GallaryComponent,
-    BlogsComponent,
-    ContactComponent,
-    ProductDetailsComponent,
-    ProductHotComponent,
-    CategoriesComponent,
-    CategoriesByIdComponent,
-    SimilarProductComponent,
-    LoginComponent,
-    OrderProductsComponent,
-    PaymentProductsComponent,
-    OrderDetailComponent,
-    CartComponent,
-    UsersComponent,
-    UpdateUserComponent,
-    SearchComponent,
-    RegisterComponent,
-    ForgotPasswordComponent
-  ],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    HttpClientModule,
-    AppRoutingModule,
-    FormsModule,
-    ReactiveFormsModule,
-    ToastrModule.forRoot(),
-
-
-  ],
-  providers: [
-  ],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        HomepageComponent,
+        AboutComponent,
+        MenuComponent,
+        ProductComponent,
+        UsersComponent,
+        GallaryComponent,
+        BlogsComponent,
+        ContactComponent,
+        ProductDetailsComponent,
+        ProductHotComponent,
+        CategoriesComponent,
+        CategoriesByIdComponent,
+        SimilarProductComponent,
+        LoginComponent,
+        OrderProductsComponent,
+        PaymentProductsComponent,
+        OrderDetailComponent,
+        CartComponent,
+        SearchComponent,
+        RegisterComponent,
+        ForgotPasswordComponent,
+    ],
+    imports: [
+        BrowserModule,
+        BrowserAnimationsModule,
+        HttpClientModule,
+        AppRoutingModule,
+        FormsModule,
+        ReactiveFormsModule,
+        ToastrModule.forRoot(),
+    ],
+    providers: [
+        {
+            provide: HTTP_INTERCEPTORS,
+            useClass: AuthInterceptor,
+            multi: true,
+        },
+    ],
+    bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

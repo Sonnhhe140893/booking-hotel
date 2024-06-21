@@ -1,1 +1,12 @@
-<p>update-user works!</p>
+<div class="container mx-auto w-100 h-100 body-content">
+    <div>
+        <h2>Update User</h2>
+        <form (ngSubmit)="updateUser()">
+
+          <label for="name">Name: {{user.name}}</label>
+          <input placeholder="Enter your name" >
+
+          <button type="submit">Update</button>
+        </form>
+      </div>
+</div>

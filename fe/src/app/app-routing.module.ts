@@ -15,8 +15,8 @@ import { PaymentProductsComponent } from './module-order/payment-products/paymen
 import { OrderDetailComponent } from './module-order/order-detail/order-detail.component';
 import { LoginComponent } from './module-authencation/login/login.component';
 import { RegisterComponent } from './module-authencation/register/register.component';
-import { UpdateUserComponent } from './users-manager/update-user/update-user.component';
-import { UsersComponent } from './users-manager/users/users.component';
+import { UpdateUserComponent } from './module-authencation/update-user/update-user.component';
+import { UsersComponent } from './module-authencation/users/users.component';
 
 const routes: Routes = [
   { path: '', component: HomepageComponent },
@@ -35,13 +35,16 @@ const routes: Routes = [
   { path: 'orderdetail', component: OrderDetailComponent  },
   { path: 'login', component: LoginComponent  },
   { path: 'register', component: RegisterComponent  },
-  { path: 'updateuser/:id/edit', component: UpdateUserComponent  },
+  { path: 'update-user/:id/edit', component: UpdateUserComponent  },
   { path: 'user', component: UsersComponent  },
+
 
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [
+    RouterModule.forRoot(routes),
+],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}
