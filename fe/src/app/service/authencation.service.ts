@@ -40,8 +40,8 @@ export class AuthencationService {
         return this.helperService.getItems("email","string")!=null;
     }
 
-    updateProfile(id:any,inputdata:any ){
-        return this.http.put(this.apiProfile+ '/' + id, inputdata);
+    updateProfile(inputdata:any ){
+        return this.http.put(this.apiProfile, inputdata);
 
     }
 

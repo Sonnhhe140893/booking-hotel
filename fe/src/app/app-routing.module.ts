@@ -15,36 +15,30 @@ import { PaymentProductsComponent } from './module-order/payment-products/paymen
 import { OrderDetailComponent } from './module-order/order-detail/order-detail.component';
 import { LoginComponent } from './module-authencation/login/login.component';
 import { RegisterComponent } from './module-authencation/register/register.component';
-import { UpdateUserComponent } from './module-authencation/update-user/update-user.component';
 import { UsersComponent } from './module-authencation/users/users.component';
 
 const routes: Routes = [
-  { path: '', component: HomepageComponent },
-  { path: 'home', component: HomepageComponent },
-  { path: 'about', component: AboutComponent },
-  { path: 'menu', component: MenuComponent },
-  { path: 'product', component: ProductComponent },
-  { path: 'hot', component: ProductHotComponent },
-  { path: 'product/:id', component: ProductDetailsComponent },
-  { path: 'categories', component: CategoriesComponent },
-  { path: 'categories/:id', component: CategoriesByIdComponent },
-  { path: 'gallary', component: GallaryComponent },
-  { path: 'contact', component: ContactComponent },
-  { path: 'blogs', component: BlogsComponent },
-  { path: 'booking', component: PaymentProductsComponent  },
-  { path: 'orderdetail', component: OrderDetailComponent  },
-  { path: 'login', component: LoginComponent  },
-  { path: 'register', component: RegisterComponent  },
-  { path: 'update-user/:id/edit', component: UpdateUserComponent  },
-  { path: 'user', component: UsersComponent  },
-
-
+    { path: '', component: HomepageComponent },
+    { path: 'home', component: HomepageComponent },
+    { path: 'about', component: AboutComponent },
+    { path: 'menu', component: MenuComponent },
+    { path: 'product', component: ProductComponent },
+    { path: 'hot', component: ProductHotComponent },
+    { path: 'product/:id', component: ProductDetailsComponent },
+    { path: 'categories', component: CategoriesComponent },
+    { path: 'categories/:id', component: CategoriesByIdComponent },
+    { path: 'gallary', component: GallaryComponent },
+    { path: 'contact', component: ContactComponent },
+    { path: 'blogs', component: BlogsComponent },
+    { path: 'booking', component: PaymentProductsComponent },
+    { path: 'orderdetail', component: OrderDetailComponent },
+    { path: 'login', component: LoginComponent },
+    { path: 'register', component: RegisterComponent },
+    { path: 'user', component: UsersComponent },
 ];
 
 @NgModule({
-  imports: [
-    RouterModule.forRoot(routes),
-],
-  exports: [RouterModule],
+    imports: [RouterModule.forRoot(routes)],
+    exports: [RouterModule],
 })
 export class AppRoutingModule {}

@@ -23,12 +23,10 @@ import { LoginComponent } from './module-authencation/login/login.component';
 import { OrderProductsComponent } from './module-order/order-products/order-products.component';
 import { PaymentProductsComponent } from './module-order/payment-products/payment-products.component';
 import { OrderDetailComponent } from './module-order/order-detail/order-detail.component';
-import { CartComponent } from './module-order/cart/cart.component';
 import { SearchComponent } from './search/search.component';
 import { RegisterComponent } from './module-authencation/register/register.component';
 import { ForgotPasswordComponent } from './module-authencation/forgot-password/forgot-password.component';
 import { AuthInterceptor } from './auth.interceptor';
-import { RouterModule } from '@angular/router';
 import { UsersComponent } from './module-authencation/users/users.component';
 
 @NgModule({
@@ -51,7 +49,6 @@ import { UsersComponent } from './module-authencation/users/users.component';
         OrderProductsComponent,
         PaymentProductsComponent,
         OrderDetailComponent,
-        CartComponent,
         SearchComponent,
         RegisterComponent,
         ForgotPasswordComponent,
