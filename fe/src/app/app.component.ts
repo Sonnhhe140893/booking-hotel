@@ -14,12 +14,21 @@ registerLocaleData(localeFr, 'fr');
 })
 export class AppComponent {
     title = 'booking-room';
+
+    users: any;
+    roles_user : any;
     constructor(
         private AuthencationService: AuthencationService,
         public helperService: HelperSeriveService
     ) {}
-    Users: any;
+    ngOnInit():void{
+        let user = this.helperService.getItems('user');
+        this.roles_user= user?.type;
+    }
     logout() {
         this.helperService.clearLocalStorage();
     }
+
+
+
 }

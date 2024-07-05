@@ -49,10 +49,7 @@ export class ProductDetailsComponent {
             console.log("clg id============", id);
             this.productService.getProductDetail(id).subscribe((res: any) => {
                 console.log('resssssss', res);
-
                 this.product =res?.data;
-                this.category_id = this.product.category;
-                console.log("category=========>",this.category_id);
                 console.log("product=>>>>>",this.product);
 
               });

@@ -1,0 +1,78 @@
+<div class="container mx-auto w-100 h-100 body-content">
+    <div class="container mt-4">
+        <div class="card">
+            <div class="card-header bg-success p-2 text-white h3">
+                <h4>Product Infor</h4>
+            </div>
+            <form [formGroup]="productForm" (ngSubmit)="onClick()">
+                <div class="form-group mb-4">
+                    <strong><label> Name: </label></strong>
+                    <input
+
+                        id="name"
+                        formControlName="name"
+                        class="form-control form-control-lg"
+                    />
+                </div>
+                <div class="form-group mb-4">
+                    <strong><label> Avatar: </label></strong>
+                    <input
+
+                        id="avatar"
+                        formControlName="avatar"
+                        class="form-control form-control-lg"
+                    />
+                </div>
+                <div class="form-group mb-4">
+                    <strong><label> Bed: </label></strong>
+                    <input
+
+                        id="bed"
+                        formControlName="bed"
+                        class="form-control form-control-lg"
+                    />
+                </div>
+                <div class="form-group mb-4">
+                    <strong><label> Room_content: </label></strong>
+                    <input
+
+                        id="room_content"
+                        formControlName="room_content"
+                        class="form-control form-control-lg"
+                    />
+                </div>
+                <div class="form-group mb-4">
+                    <strong><label> Description: </label></strong>
+                    <input
+
+                        id="description"
+                        formControlName="description"
+                        class="form-control form-control-lg"
+                    />
+                </div>
+                <div class="form-group mb-4">
+                    <strong><label> Price: </label></strong>
+                    <input
+
+                        id="price"
+                        formControlName="price"
+                        class="form-control form-control-lg"
+                    />
+                </div>
+                <div class="form-group mb-4">
+                    <strong><label> Size: </label></strong>
+                    <input
+
+                        id="size"
+                        formControlName="size"
+                        class="form-control form-control-lg"
+                    />
+                </div>
+
+                <button type="submit" [disabled]="!productForm.valid">
+                    Update
+                </button>
+            </form>
+        </div>
+    </div>
+</div>

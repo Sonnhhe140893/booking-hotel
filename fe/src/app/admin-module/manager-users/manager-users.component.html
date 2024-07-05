@@ -1,0 +1,41 @@
+<section class="product container mx-auto w-100 h-100 pb-md-5"  id="product">
+    <div class="heading4">Manager Users</div>
+
+          <!-- <div class="row " role="search"  >
+              <app-search [search]="search" (searchEvent)="handleSearch($event)"></app-search>
+          </div> -->
+
+
+    <div class="row pt-md-5">
+      <h2 class="bg-success p-2 text-white h3" > List Users   </h2>
+      <div class="col-md-3 mt-5  " *ngFor="let item of userlisting">
+        <div class="card" >
+          <img class="w-100 " src="{{helperService.buildImage(item.avatar)}}" alt="{{item.image}}" />
+          <div class="card-body   ">
+              <h3 >Username: {{ item.name }}</h3>
+            <p >
+                Email : {{ item.email }}  <span><i></i></span>
+            </p>
+            <p >
+                Sex : {{ item.sex }}  <span><i></i></span>
+            </p>
+            <p >
+                Type : {{ item.type }}  <span><i></i></span>
+            </p>
+            <p >
+                Birthday : {{ item.birthday }}  <span><i></i></span>
+            </p>
+            <p  >
+                Phone number : {{ item.phone }}  <span><i></i></span>
+            </p>
+            <div class="d-flex">
+                <button class="btn btn-primary w-100" routerLink="/managerusers/admin/{{item._id}}/edit" >Edit Users</button>
+                <!-- <button class="btn btn-info w-100" routerLink="/product/{{item._id}}">Product Detail</button> -->
+
+        </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>

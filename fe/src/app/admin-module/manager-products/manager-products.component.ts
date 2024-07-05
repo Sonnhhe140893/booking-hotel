@@ -3,11 +3,11 @@ import { ProductRoomService } from '../../service/product-room.service';
 import { HelperSeriveService } from '../../service/common/helper-serive.service';
 
 @Component({
-    selector: 'app-product',
-    templateUrl: './product.component.html',
-    styleUrl: './product.component.scss',
+  selector: 'app-manager-products',
+  templateUrl: './manager-products.component.html',
+  styleUrl: './manager-products.component.scss'
 })
-export class ProductComponent {
+export class ManagerProductsComponent {
     search :string='';
     listRooms: any;
     paging: any = {

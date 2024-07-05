@@ -15,7 +15,7 @@ import { GallaryComponent } from './gallary/gallary.component';
 import { BlogsComponent } from './blogs/blogs.component';
 import { ContactComponent } from './contact/contact.component';
 import { ProductDetailsComponent } from './module-products/product-details/product-details.component';
-import { ProductHotComponent } from './module-products/product-hot/product-hot.component';
+
 import { CategoriesComponent } from './module-products/categories/categories.component';
 import { CategoriesByIdComponent } from './module-products/categories-by-id/categories-by-id.component';
 import { SimilarProductComponent } from './module-products/similar-product/similar-product.component';
@@ -23,11 +23,18 @@ import { LoginComponent } from './module-authencation/login/login.component';
 import { OrderProductsComponent } from './module-order/order-products/order-products.component';
 import { PaymentProductsComponent } from './module-order/payment-products/payment-products.component';
 import { OrderDetailComponent } from './module-order/order-detail/order-detail.component';
-import { SearchComponent } from './search/search.component';
+
 import { RegisterComponent } from './module-authencation/register/register.component';
 import { ForgotPasswordComponent } from './module-authencation/forgot-password/forgot-password.component';
 import { AuthInterceptor } from './auth.interceptor';
 import { UsersComponent } from './module-authencation/users/users.component';
+import { SearchComponent } from './seach-rooms/search/search.component';
+import { ManagerSystemComponent } from './admin-module/manager-system/manager-system.component';
+import { ManagerProductsComponent } from './admin-module/manager-products/manager-products.component';
+import { ManagerUsersComponent } from './admin-module/manager-users/manager-users.component';
+import { UpdateProductComponent } from './admin-module/update-product/update-product.component';
+import { UpdateUserComponent } from './admin-module/update-user/update-user.component';
+import { CreateRoomComponent } from './admin-module/create-room/create-room.component';
 
 @NgModule({
     declarations: [
@@ -41,7 +48,6 @@ import { UsersComponent } from './module-authencation/users/users.component';
         BlogsComponent,
         ContactComponent,
         ProductDetailsComponent,
-        ProductHotComponent,
         CategoriesComponent,
         CategoriesByIdComponent,
         SimilarProductComponent,
@@ -49,9 +55,18 @@ import { UsersComponent } from './module-authencation/users/users.component';
         OrderProductsComponent,
         PaymentProductsComponent,
         OrderDetailComponent,
-        SearchComponent,
         RegisterComponent,
         ForgotPasswordComponent,
+        SearchComponent,
+
+        // admin
+        ManagerSystemComponent,
+        ManagerProductsComponent,
+        ManagerUsersComponent,
+        UpdateProductComponent,
+        UpdateUserComponent,
+        CreateRoomComponent,
+
     ],
     imports: [
         BrowserModule,

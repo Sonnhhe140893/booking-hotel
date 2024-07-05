@@ -1,3 +1,4 @@
+import { UpdateUserComponent } from './admin-module/update-user/update-user.component';
 import { CategoriesComponent } from './module-products/categories/categories.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -8,7 +9,6 @@ import { ProductComponent } from './module-products/product/product.component';
 import { GallaryComponent } from './gallary/gallary.component';
 import { ContactComponent } from './contact/contact.component';
 import { BlogsComponent } from './blogs/blogs.component';
-import { ProductHotComponent } from './module-products/product-hot/product-hot.component';
 import { ProductDetailsComponent } from './module-products/product-details/product-details.component';
 import { CategoriesByIdComponent } from './module-products/categories-by-id/categories-by-id.component';
 import { PaymentProductsComponent } from './module-order/payment-products/payment-products.component';
@@ -16,14 +16,18 @@ import { OrderDetailComponent } from './module-order/order-detail/order-detail.c
 import { LoginComponent } from './module-authencation/login/login.component';
 import { RegisterComponent } from './module-authencation/register/register.component';
 import { UsersComponent } from './module-authencation/users/users.component';
+import { ManagerSystemComponent } from './admin-module/manager-system/manager-system.component';
+import { ManagerProductsComponent } from './admin-module/manager-products/manager-products.component';
+import { ManagerUsersComponent } from './admin-module/manager-users/manager-users.component';
+import { UpdateProductComponent } from './admin-module/update-product/update-product.component';
 
 const routes: Routes = [
+    //User
     { path: '', component: HomepageComponent },
     { path: 'home', component: HomepageComponent },
     { path: 'about', component: AboutComponent },
     { path: 'menu', component: MenuComponent },
     { path: 'product', component: ProductComponent },
-    { path: 'hot', component: ProductHotComponent },
     { path: 'product/:id', component: ProductDetailsComponent },
     { path: 'categories', component: CategoriesComponent },
     { path: 'categories/:id', component: CategoriesByIdComponent },
@@ -35,6 +39,13 @@ const routes: Routes = [
     { path: 'login', component: LoginComponent },
     { path: 'register', component: RegisterComponent },
     { path: 'user', component: UsersComponent },
+    // admin
+    { path: 'manager/admin', component: ManagerSystemComponent },
+    { path: 'managerproducts/admin', component: ManagerProductsComponent },
+    { path: 'managerusers/admin', component: ManagerUsersComponent },
+    { path: 'managerproducts/admin/:id/edit', component: UpdateProductComponent },
+    { path: 'managerusers/admin/:id/edit', component: UpdateUserComponent },
+
 ];
 
 @NgModule({

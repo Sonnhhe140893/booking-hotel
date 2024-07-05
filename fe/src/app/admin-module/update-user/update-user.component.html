@@ -1,0 +1,79 @@
+<div class="container mx-auto w-100 h-100 body-content">
+    <div class="container mt-4">
+        <div class="card">
+            <div class="card-header bg-success p-2 text-white h3">
+                <h4>User Update</h4>
+            </div>
+            <form [formGroup]="userForm" (ngSubmit)="onClick()">
+                <div class="form-group mb-4">
+                    <strong><label> Name: </label></strong>
+                    <input
+
+                        id="name"
+                        formControlName="name"
+                        class="form-control form-control-lg"
+                    />
+                </div>
+                <!-- <div class="form-group mb-4">
+                    <strong><label> Avatar: </label></strong>
+                    <input
+
+                        id="avatar"
+                        formControlName="avatar"
+                        class="form-control form-control-lg"
+                    />
+                </div> -->
+                <div class="form-group mb-4">
+                    <strong><label> email: </label></strong>
+                    <input
+
+                        id="email"
+                        formControlName="email"
+                        class="form-control form-control-lg"
+                    />
+                </div>
+                <div class="form-group mb-4">
+                    <strong><label> birthday: </label></strong>
+                    <input
+
+                        id="birthday"
+                        formControlName="birthday"
+                        class="form-control form-control-lg"
+                    />
+                </div>
+                <div class="form-group mb-4">
+                    <strong><label> sex: </label></strong>
+                    <input
+
+                        id="sex"
+                        formControlName="sex"
+                        class="form-control form-control-lg"
+                    />
+                </div>
+                <div class="form-group mb-4">
+                    <strong><label> type: </label></strong>
+                    <input
+
+                        id="type"
+                        formControlName="type"
+                        class="form-control form-control-lg"
+                    />
+                </div>
+                <div class="form-group mb-4">
+                    <strong><label> phone: </label></strong>
+                    <input
+
+                        id="phone"
+                        formControlName="phone"
+                        class="form-control form-control-lg"
+                    />
+                </div>
+
+                <button type="submit" [disabled]="!userForm.valid">
+                    Update
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+
