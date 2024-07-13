@@ -10,6 +10,7 @@ import { Toast, ToastrService } from 'ngx-toastr';
 })
 export class ManagerUsersComponent {
 
+
     userlisting:any ;
 
     paging: any = {

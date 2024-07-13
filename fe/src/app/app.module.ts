@@ -35,6 +35,12 @@ import { ManagerUsersComponent } from './admin-module/manager-users/manager-user
 import { UpdateProductComponent } from './admin-module/update-product/update-product.component';
 import { UpdateUserComponent } from './admin-module/update-user/update-user.component';
 import { CreateRoomComponent } from './admin-module/create-room/create-room.component';
+import { ManagerCategoryComponent } from './admin-module/manager-category/manager-category.component';
+import { ManagerBookingComponent } from './admin-module/manager-booking/manager-booking.component';
+import { CreateAccountComponent } from './admin-module/create-account/create-account.component';
+import { CreateCategoryComponent } from './admin-module/create-category/create-category.component';
+import { UpdateCategoryComponent } from './admin-module/update-category/update-category.component';
+
 
 @NgModule({
     declarations: [
@@ -66,6 +72,12 @@ import { CreateRoomComponent } from './admin-module/create-room/create-room.comp
         UpdateProductComponent,
         UpdateUserComponent,
         CreateRoomComponent,
+        ManagerCategoryComponent,
+        ManagerBookingComponent,
+        CreateAccountComponent,
+        CreateCategoryComponent,
+        UpdateCategoryComponent,
+
 
     ],
     imports: [

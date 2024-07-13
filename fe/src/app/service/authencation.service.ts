@@ -12,6 +12,7 @@ export class AuthencationService {
     apiProfile = 'http://localhost:3053/api/v1/profile';
     apiAdmin = 'http://localhost:3053/api/v1/admin/user/update';
     apiGetUserAdmin = 'http://localhost:3053/api/v1/admin/user/';
+    apiCreatAdmin = 'http://localhost:3053/api/v1/admin/user/store';
     constructor(
         private http: HttpClient,
         private helperService: HelperSeriveService
@@ -50,6 +51,9 @@ export class AuthencationService {
         return this.http.post(this.apiRegister, inputdata);
     }
 
+    createAdmin(inputdata:any){
+        return this.http.post(this.apiCreatAdmin,inputdata);
+    }
     checkLogin(){
         return this.helperService.getItems("email","string")!=null;
     }

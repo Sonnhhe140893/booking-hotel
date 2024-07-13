@@ -32,19 +32,7 @@ export class OrderDetailComponent {
             this.rooms = res?.data?.bookings;
             console.log('resssssssssss:',res);
 
-
-
         })
-
-
-
     }
-
-
-    onClickDelete(){
-
-    }
-
-
 }
 

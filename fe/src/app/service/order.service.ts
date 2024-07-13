@@ -11,6 +11,7 @@ export class OrderService {
               private http :HttpClient ) { }
 
    apiCart = "http://localhost:3053/api/v1/booking";
+   apiCartAdmin= "http://localhost:3053/api/v1/admin/booking";
 
     getAll(filters: any){
         let params = new HttpParams()
@@ -18,12 +19,14 @@ export class OrderService {
         return this.http.get(this.apiCart , {params: params})
     }
 
+    getBookings(filters: any){
+        let params = new HttpParams()
+        return this.http.get(this.apiCartAdmin,{params: params})
+    }
+
     bookingsRooms(data:any){
        return this.http.post(this.apiCart , data);
     }
-
-
-
 
    }
 

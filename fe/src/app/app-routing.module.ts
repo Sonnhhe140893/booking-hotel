@@ -20,6 +20,13 @@ import { ManagerSystemComponent } from './admin-module/manager-system/manager-sy
 import { ManagerProductsComponent } from './admin-module/manager-products/manager-products.component';
 import { ManagerUsersComponent } from './admin-module/manager-users/manager-users.component';
 import { UpdateProductComponent } from './admin-module/update-product/update-product.component';
+import { CreateRoomComponent } from './admin-module/create-room/create-room.component';
+import { ManagerBookingComponent } from './admin-module/manager-booking/manager-booking.component';
+import { ManagerCategoryComponent } from './admin-module/manager-category/manager-category.component';
+import { CreateAccountComponent } from './admin-module/create-account/create-account.component';
+import { CreateCategoryComponent } from './admin-module/create-category/create-category.component';
+import { UpdateCategoryComponent } from './admin-module/update-category/update-category.component';
+
 
 const routes: Routes = [
     //User
@@ -41,10 +48,20 @@ const routes: Routes = [
     { path: 'user', component: UsersComponent },
     // admin
     { path: 'manager/admin', component: ManagerSystemComponent },
+
     { path: 'managerproducts/admin', component: ManagerProductsComponent },
     { path: 'managerusers/admin', component: ManagerUsersComponent },
+    { path: 'managerbooking/admin', component: ManagerBookingComponent },
+    { path: 'managercategory/admin', component: ManagerCategoryComponent },
+
+
+    { path: 'managerproducts/admin/create-room', component: CreateRoomComponent },
+    { path: 'manageruseradmin/admin/create-account', component: CreateAccountComponent },
+    { path: 'managercategory/admin/create-category', component: CreateCategoryComponent },
+
     { path: 'managerproducts/admin/:id/edit', component: UpdateProductComponent },
     { path: 'managerusers/admin/:id/edit', component: UpdateUserComponent },
+    { path: 'managercategory/admin/:id/edit', component: UpdateCategoryComponent  },
 
 ];
 

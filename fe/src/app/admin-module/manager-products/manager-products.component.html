@@ -20,6 +20,9 @@
             <!-- <button class="btn btn-primary w-100" routerLink="/product/admin/{{item._id}}">Update Product</button> -->
              <button class="btn btn-primary w-100" routerLink="/managerproducts/admin/{{item._id}}/edit" >Update Product</button>
              <button class="btn btn-info w-100" routerLink="/product/{{item._id}}">Product Detail</button>
+             <button class="btn btn-outline-success w-100" (click)="clickDelete(item._id)">Delete</button>
+
+
         </div>
           </div>
 

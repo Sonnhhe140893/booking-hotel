@@ -28,6 +28,10 @@
             <p  >
                 Phone number : {{ item.phone }}  <span><i></i></span>
             </p>
+            <p >
+               Status: {{item.status ==1 ? 'active' : 'isactive'}}     <span><i></i></span>
+
+            </p>
             <div class="d-flex">
                 <button class="btn btn-primary w-100" routerLink="/managerusers/admin/{{item._id}}/edit" >Edit Users</button>
                 <!-- <button class="btn btn-info w-100" routerLink="/product/{{item._id}}">Product Detail</button> -->

@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { ProductRoomService } from '../../service/product-room.service';
 import { HelperSeriveService } from '../../service/common/helper-serive.service';
+import { ActivatedRoute, Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-manager-products',
@@ -8,6 +10,7 @@ import { HelperSeriveService } from '../../service/common/helper-serive.service'
   styleUrl: './manager-products.component.scss'
 })
 export class ManagerProductsComponent {
+    id :any;
     search :string='';
     listRooms: any;
     paging: any = {
@@ -17,7 +20,11 @@ export class ManagerProductsComponent {
     };
     constructor(
         private productService: ProductRoomService,
-        public helperService: HelperSeriveService
+        public helperService: HelperSeriveService,
+        private activeRoute: ActivatedRoute,
+        private toastr :ToastrService,
+        private router : Router
+
     ) {}
 
     ngOnInit(): void {
@@ -47,5 +54,11 @@ export class ManagerProductsComponent {
         this.getListData({name: event});
 
 
+    }
+
+    clickDelete(id:any):void{
+        this.productService.deleteProduct(id).subscribe(()=>{
+            this.getListData({...this.paging});
+        })
     }
 }
