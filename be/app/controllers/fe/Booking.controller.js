@@ -89,7 +89,11 @@ exports.index = async (req, res) => {
         const condition = {};
         if (req.query.room_id) condition.room_id = req.query.room_id;
         if (req.query.user_id) condition.user_id = req.query.user_id;
-
+        if (req.query.status) condition.status = req.query.status;
+        if (req.query.status_payment) condition.status_payment = req.query.status_payment;
+        if (req.query.email) {
+			condition.customer_email = {$regex : '.*'+ req.query.email + '.*'};
+		}
 
         const bookings = await Booking.find()
             .where(condition)

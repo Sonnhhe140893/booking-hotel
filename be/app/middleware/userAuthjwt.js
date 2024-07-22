@@ -5,6 +5,9 @@ const {verify} = require("jsonwebtoken");
 exports.isAuth = async (req, res, next) => {
     // Lấy access token từ header
     // return next();
+	if(process.env.CHECK_AUTH== "false") {
+		return next();
+	}
 	try
 	{
 

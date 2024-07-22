@@ -63,24 +63,29 @@ exports.show = async (req, res) => {
 };
 
 exports.store = async (req, res) => {
-    const category = await Category.findById(req.body.category_id);
-    const room = new Room({
-        name: req.body.name,
-        avatar: req.body.avatar || null,
-        description: req.body.description,
-        room_content: req.body.room_content,
-        price: req.body.price,
-        size: req.body.size,
-        bed: req.body.bed,
-		customer: req.body.customer,
-		albums: req.body.albums,
-        room_code: req.body.room_code,
-        floors: req.body.floors,
-        category: category,
-        category_id: req.body.category_id
-    })
-    await room.save()
-    return res.status(200).json({ data: room, status : 200 });
+    try {
+        const category = await Category.findById(req.body.category_id);
+        const room = new Room({
+            name: req.body.name,
+            avatar: req.body.avatar || null,
+            description: req.body.description,
+            room_content: req.body.room_content,
+            price: req.body.price,
+            size: req.body.size,
+            bed: req.body.bed,
+            customer: req.body.customer,
+            albums: req.body.albums,
+            room_code: req.body.room_code,
+            floors: req.body.floors,
+            category: category,
+            category_id: req.body.category_id
+        })
+        await room.save()
+        return res.status(200).json({ data: room, status : 200 });
+    } catch (error) {
+        return res.status(200).json({ status : 400, message: error.message });
+        // data: error,
+    }
 };
 
 exports.update = async (req, res) => {
@@ -136,12 +141,13 @@ exports.update = async (req, res) => {
 
 		const admin = req.user;
 
-		room.updated_by = admin._id;
+		room.updated_by = admin?._id;
 
         await room.save();
         return res.status(200).json({ data: room, status: 200 });
-    } catch {
-        res.status(404)
+    } catch(e) {
+        res.status(404);
+        console.log(e);
         res.send({ error: "Room doesn't exist!" })
     }
 };

@@ -62,6 +62,7 @@ exports.store = async ( req, res ) =>
 		avatar: req.body.avatar || null,
 		email: req.body.email,
 		phone: req.body.phone,
+		type: req?.body?.type,
 		birthday: req.body.birthday,
 		sex: req.body.sex,
 		status: req.body.status || 1,

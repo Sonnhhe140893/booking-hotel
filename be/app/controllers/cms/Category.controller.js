@@ -32,7 +32,7 @@ exports.index = async ( req, res ) =>
 		} );
 	} catch ( err )
 	{
-		console.error( err.message );
+		console.error( "category--------> ", err.message );
 	}
 };
 

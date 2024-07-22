@@ -45,6 +45,9 @@ exports.index = async ( req, res ) =>
 			}
 
 		}
+
+		console.log("req---------> ", req.query);
+		console.log("condition---------> ", condition);
 		// if(req.query.size) condition.size = req.query.size;
 		const paging = buildParamPaging( req.query );
 		const rooms = await Room.find()

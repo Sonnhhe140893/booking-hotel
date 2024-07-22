@@ -29,6 +29,7 @@ exports.register = async ( req, res ) =>
 			password: hashPassword,
 			name: req.body.name,
 			age: req.body.age,
+			type: req.body.type || null,
 			sex: req.body.sex,
 			birthday: req.body.birthday,
 			phone: req.body.phone

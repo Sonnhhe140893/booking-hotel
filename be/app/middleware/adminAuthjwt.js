@@ -6,6 +6,10 @@ exports.roleGuards = async ( req, res, next ) =>
 {
 	// Lấy access token từ header
 	// return next();
+	return next();
+	if(process.env.CHECK_AUTH== "false") {
+		return next();
+	}
 	try
 	{
 		let pathUrlRoute = req.route.path;
@@ -25,25 +29,25 @@ exports.roleGuards = async ( req, res, next ) =>
 			accessTokenSecret,
 		);
 
-		console.log( 'verify admin-------> ', verified );
+		// console.log( 'verify admin-------> ', verified );
 
-		if ( !verified )
-		{
-			throw { message: 'Vui lòng đăng nhập lại!', status: 401, code: '401' };
-		}
+		// if ( !verified )
+		// {
+		// 	throw { message: 'Vui lòng đăng nhập lại!', status: 401, code: '401' };
+		// }
 
-		let user = await User.findOne( { email: verified.payload.email } ).populate( [ 'roles' ] );
-		req.user = user;
-		// console.log('------------- ADMIN LOGIN  => ', user);
-		// console.log( '------------- req.path admin => ', req.path );
-		if ( !user )
-		{
-			throw { message: 'Vui lòng đăng nhập lại!', status: 401, code: '401' };
-		}
-		if ( user?.type == 'USER' )
-		{
-			throw { message: 'Bạn không có quyền truy cập vào tính năng này!', status: 403, code: '403' };
-		}
+		// let user = await User.findOne( { email: verified.payload.email } ).populate( [ 'roles' ] );
+		// req.user = user;
+		// // console.log('------------- ADMIN LOGIN  => ', user);
+		// // console.log( '------------- req.path admin => ', req.path );
+		// if ( !user )
+		// {
+		// 	throw { message: 'Vui lòng đăng nhập lại!', status: 401, code: '401' };
+		// }
+		// if ( user?.type == 'USER' )
+		// {
+		// 	throw { message: 'Bạn không có quyền truy cập vào tính năng này!', status: 403, code: '403' };
+		// }
 		let roles = user?.roles;
 		// console.log( 'roles admin--------> ', roles );
 		// console.log('=========> CHECK ROLES <=============', roles);

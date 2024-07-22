@@ -3,6 +3,7 @@ const RoomModel = require("../../models/Room.model");
 const Booking = require("./../../models/Booking.model");
 const User = require("./../../models/User.model");
 const moment = require("moment");
+
 exports.index = async (req, res) => {
     const page = req.query?.page || 1; const page_size = req.query?.page_size || 10;
     try {
