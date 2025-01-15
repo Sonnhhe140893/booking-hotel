@@ -1,24 +1,25 @@
 *{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-size: large;
-  font-family: 'Merriweather', serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: large;
+    font-family: 'Merriweather', serif;
 }
 .all-content{
-background: #f7f5f2;
+    background: #f7f5f2;
+
 }
-//hàng kéo lên xuống: scrollbar
-html::-webkit-scrollbar-track{
-background: transparent;
+    //hàng kéo lên xuống: scrollbar
+    html::-webkit-scrollbar-track{
+    background: transparent;
 }
 
-html::-webkit-scrollbar-thumb{
-background: #b2744c;
-border-radius: 10px;
+    html::-webkit-scrollbar-thumb{
+    background: #b2744c;
+    border-radius: 10px;
 }
-html::-webkit-scrollbar{
-width: 10px;
+    html::-webkit-scrollbar{
+    width: 10px;
 }
 
 
@@ -27,41 +28,42 @@ width: 10px;
 
 // trỏ ID : "#" ,class: "."
 #navbar{
-  position: fixed;//:vị trí tuyệt đối  (navbar trôi khi kéo trang)
-  z-index: 10; //:nếu k xét z-index code mặc định =0 và web chạy lần lượt k có ưu tiên chèn lên  (navbar trôi khi kéo trang)
-  width: 100%;
-  background-color: #b2744c;
-  font-family: 'Roboto', sans-serif;
+    position: fixed;//:vị trí tuyệt đối  (navbar trôi khi kéo trang)
+    z-index: 10; //:nếu k xét z-index code mặc định =0 và web chạy lần lượt k có ưu tiên chèn lên  (navbar trôi khi kéo trang)
+    width: 100%;
+    background-color: #b2744c;
+    font-family: 'Roboto', sans-serif;
 }
 #logo img{
-  border-radius: 10px;
-  width: 160px;
-  margin-left: 40px;
-  margin-right: 20px;
+    border-radius: 10px;
+    width: 160px;
+    margin-left: 40px;
+    margin-right: 20px;
 }
 .navbar-nav{
-  margin-left: 50px;
+    margin-left: 50px;
 }
 .nav-item .nav-link{
-  color: black;
-  margin-left: 50px;
-  font-weight: bold;
-  transition: 0.5s;
+    color: black;
+    margin-left: 50px;
+    font-weight: bold;
+    transition: 0.5s;
 }
 .nav-item .nav-link:hover{
-  background: #f7f5f2;
-  border-radius: 5px;
-  color: black;
+    background: #f7f5f2;
+    border-radius: 5px;
+    color: black;
 }
 #navbar form button{
-
-  margin-right: 50px;
-  background: black;
-  color: white;
-  border: 1px solid white;
+    margin-right: 50px;
+    background: black;
+    color: white;
+    border: 1px solid white;
 }
 
+#body {
 
+}
 /* navbar */
 
 // footer
